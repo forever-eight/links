@@ -3,6 +3,8 @@ package ds
 import (
 	"log"
 
+	_ "github.com/go-sql-driver/mysql"
+
 	"links/internal/pkg/rand"
 )
 
