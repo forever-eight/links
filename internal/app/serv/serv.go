@@ -14,16 +14,16 @@ func MainServ() {
 	rep, err := Repository.InitDB()
 	if err != nil {
 		//todo: err
-		log.Println("InitDB err")
+		log.Println("InitDB err", err)
+		return
 	}
 
 	ep := Endpoint.Endpoint{
-		rep,
+		R: rep,
 	}
 
 	e.POST("/links", ep.GetLink)
 
 	e.GET("/*", ep.Fallback)
 	e.Logger.Fatal(e.Start(":1323"))
-
 }

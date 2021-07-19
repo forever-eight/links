@@ -18,7 +18,7 @@ type Repository struct {
 const count = 8
 
 func InitDB() (*Repository, error) {
-	db, err := sql.Open("mysql", "root:root@tcp(127.0.0.1:8889)/links")
+	db, err := sql.Open("mysql", "root:example@tcp(127.0.0.1:3306)/links")
 	if err != nil {
 		panic(err)
 	}
